@@ -1,0 +1,76 @@
+Problem Statement:
+
+A Company wants to automate the loan eligibility process based on customer details provided while filling online application form. 
+The details filled by the customer are Gender, Marital Status, Education, Number of Dependents, Income of self and co applicant, Required Loan Amount,
+Required Loan Term, Credit History and others. The requirements are as follows:
+
+1.)Check eligibility of the Customer given the inputs described above.(Classification)
+
+2.)Identify customer segments from given data and categorize customer into one of the segments.(Clustering)
+
+3.)If customer is not eligible for the input required amount and duration:
+   a.)what can be amount for the given duration.(Regression)
+  
+   b.)if duration is less than equal to 20 years, is customer eligible for required amount for some longer duration?
+      What is that duration?(Regression)
+      
+      
+      
+  Here are the steps which i followed to solve this problem statement :
+  1) important libraries which i used :
+                                       a) pandas -Data Manipulation
+                                       b) Numpy -Mathematical Functions
+                                       c) seaborn -visualization
+                                       d) matplotlib -ploting graphs
+                                       e)sklearn - this library contains all required functions for model creation
+  2) Data cleaning :
+                    In data cleaning the missing data is replaced with mean and mode values according to data type of feature.
+                    If feature is categorical missing value is replaced with Mode value of that feature .
+                    If feature is numerical missing value is replaced with Mean value of that feature.
+                    Droping unnecessary features.(Loan _Id).
+  
+  3)Exploratory Data Analysis:
+                              In initial exploratory data analysis following things can be concluded:
+                              1.Gender--Most men are elligible for Loan than woman.
+                              2.Married--here married overtaking the unmarried.
+                              3.Dependants--with less dependatns possibility of getting loan is high.
+                              4.Education--Graduates are eligible than Non-graduate.
+                              5.Self-Employed---self employed are non-working class and bank has rejected them mostly.
+                              6.Loan_status doesn't show any varaition with ApplicantIncome and CoApplicantIncome.
+                              7.Loan_Amount_Term is given in months.
+                              8.Mostly customer with credit history 1 are ineligible.
+                              9.Property_Area--Semiurban property is accepted mostely for loan aproval.
+                              
+  4)Skew ness in data:
+                      The numerical feature data can be skewed. If data is not normally distributed.
+                      we can teat that data with log function.
+                      
+  5)Data Standardization: 
+                        The categorical feautres are One Hot Encoded.
+                        The numerical features are standardised using StandardScalar function.
+  
+  6)Feature Selection:
+                     For classification in linear model i have used Anova test.It gives feature importance between numerical and categorical feature.
+                     Chisquare test is also used for categorical features for feature importance.
+                     For regression problem used features with good corelation with target features.
+                     
+  7)Model creation :
+                    a) To check Loan eligibility Classification models are used. 
+                       Decision tree model performed well ,the prediction are taken from that model.
+                    
+                    b) To create customer segmentation Kmeans clustering used. The features selected from random forest feature importance function.
+                    
+                    c) To calculate amount for given duration Linear regression is used.
+                    
+                    d) To calculate longer duration Linear regression is used.
+                    
+  8)Error Calculation :
+                     Accuracy Score for classification and Mean absolute error for regression model    
+                       
+                     
+                     
+                     
+                     
+                     
+                     
+                                       
