@@ -22,12 +22,13 @@ Required Loan Term, Credit History and others. The requirements are as follows:
                                        b) Numpy -Mathematical Functions
                                        c) seaborn -visualization
                                        d) matplotlib -ploting graphs
-                                       e)sklearn - this library contains all required functions for model creation
-  2) Data cleaning :
+                                       e)sklearn - this library contains all required classes for model creation.Some of them are Model_selection,Linear_models,Metrics,
+                                       preprocessing,etc.
+  2) Data preparation :
                     In data cleaning the missing data is replaced with mean and mode values according to data type of feature.
                     If feature is categorical missing value is replaced with Mode value of that feature .
                     If feature is numerical missing value is replaced with Mean value of that feature.
-                    Droping unnecessary features.(Loan _Id).
+                    Dropping unnecessary features.(Loan _Id).
   
   3)Exploratory Data Analysis:
                               In initial exploratory data analysis following things can be concluded:
@@ -41,18 +42,18 @@ Required Loan Term, Credit History and others. The requirements are as follows:
                               8.Mostly customer with credit history 1 are ineligible.
                               9.Property_Area--Semiurban property is accepted mostely for loan aproval.
                               
-  4)Skew ness in data:
-                      The numerical feature data can be skewed. If data is not normally distributed.
-                      we can teat that data with log function.
+  4)Skewness in data:
+                      The numerical data can be skewed.Here LoanAmount,coapplicantincome and Applicantincome are skewed features .Their mean value is less than median
+                      value .These are positively skewed and this type of data can misslead model in prediction. we can teat that data with log function and make it 
+                      equally distibuted over its central value which is normal distribution.
                       
   5)Data Standardization: 
-                        The categorical feautres are One Hot Encoded.
-                        The numerical features are standardised using StandardScalar function.
+                        The ML model requires numerical and standard data.The standardization requires when data is not in equal scale. The categorical feautres are 
+                        One Hot Encoded.The numerical features are standardised using StandardScalar function.
   
-  6)Feature Selection:
+  6)Feature Engineering:
                      For classification in linear model i have used Anova test.It gives feature importance between numerical and categorical feature.
-                     Chisquare test is also used for categorical features for feature importance.
-                     For regression problem used features with good corelation with target features.
+                     Chisquare test is also used for categorical features for feature importance.For regression problem used features with good corelation with target features.
                      
   7)Model creation :
                     a) To check Loan eligibility Classification models are used. 
